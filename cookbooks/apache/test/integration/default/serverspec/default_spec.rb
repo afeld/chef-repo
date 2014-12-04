@@ -14,11 +14,15 @@ describe 'apache' do
     expect(service('httpd')).to be_running
   end
 
-  it "is responding to http requests" do
-    expect(command('curl http://localhost').exit_status).to eq(0)
-  end
+  describe command('curl http://localhost') do
+    it "is responding to http requests" do
+      expect(subject.exit_status).to eq(0)
+    end
 
-  it "is displaying the proper home page"
+    it "is displaying the proper home page" do
+      expect(subject.stdout).to include("Aidan's Home Page")
+    end
+  end
 
   it "is running on the default port"
 end
