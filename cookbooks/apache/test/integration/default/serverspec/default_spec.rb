@@ -10,7 +10,9 @@ describe 'apache' do
     expect(package('httpd')).to be_installed
   end
 
-  it "is running"
+  it "is running" do
+    expect(service('httpd')).to be_running
+  end
 
   it "is responding to http requests"
 
