@@ -17,4 +17,5 @@ end
 
 service "ntpd" do
   action [:start, :enable]
+  subscribes :reload, "template[/etc/ntp.conf]", :immediately
 end
