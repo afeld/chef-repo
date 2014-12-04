@@ -14,7 +14,9 @@ describe 'apache' do
     expect(service('httpd')).to be_running
   end
 
-  it "is responding to http requests"
+  it "is responding to http requests" do
+    expect(command('curl http://localhost').exit_status).to eq(0)
+  end
 
   it "is displaying the proper home page"
 
