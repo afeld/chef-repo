@@ -24,5 +24,7 @@ describe 'apache' do
     end
   end
 
-  it "is running on the default port"
+  it "is running on the default port" do
+    expect(port(80)).to be_listening.with('tcp')
+  end
 end
