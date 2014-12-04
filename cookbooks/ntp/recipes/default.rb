@@ -3,3 +3,7 @@
 # Recipe:: default
 #
 # Copyright (c) 2014 The Authors, All Rights Reserved.
+
+package "ntp"
+
+package "ntpdate"
