@@ -10,8 +10,14 @@ describe 'apache' do
     expect(package('httpd')).to be_installed
   end
 
-  it "is running" do
-    expect(service('httpd')).to be_running
+  describe service('httpd') do
+    it "is running" do
+      expect(subject).to be_running
+    end
+
+    it "is enabled" do
+      expect(subject).to be_enabled
+    end
   end
 
   describe command('curl http://localhost') do
