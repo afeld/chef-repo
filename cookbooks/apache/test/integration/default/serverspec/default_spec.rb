@@ -6,7 +6,9 @@ describe 'apache' do
     expect(true).to eq(true)
   end
 
-  it "is installed"
+  it "is installed" do
+    expect(package('httpd')).to be_installed
+  end
 
   it "is running"
 
